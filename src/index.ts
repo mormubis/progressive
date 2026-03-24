@@ -2,10 +2,10 @@ import type { Game } from './types.js';
 
 function playerResult(playerId: string, round: Game[]): number {
   for (const g of round) {
-    if (g.whiteId === playerId) {
+    if (g.white === playerId) {
       return g.result;
     }
-    if (g.blackId === playerId) {
+    if (g.black === playerId) {
       return 1 - g.result;
     }
   }

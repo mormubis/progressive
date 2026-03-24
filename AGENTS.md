@@ -85,8 +85,8 @@ pnpm lint && pnpm test && pnpm build
   structural.
 - `progressiveCut1` removes the final round's cumulative contribution before
   summing. This reduces the influence of the last round on the tiebreak.
-- A `Game` with `blackId: ''` (empty string) represents a **bye**. Byes score as
-  a full point for progressive purposes in accordance with FIDE rules.
+- A `Game` with `black: ''` (empty string) represents a **bye**. Byes score as a
+  full point for progressive purposes in accordance with FIDE rules.
 - **No runtime dependencies** — keep it that way.
 - **ESM-only** — the package ships only ESM. Do not add a CJS build.
 
