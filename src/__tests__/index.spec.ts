@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { progressiveCut1 } from '../progressive-cut1.js';
-import { progressive } from '../progressive.js';
+import { progressiveCut1 } from '../cut1.js';
+import { progressive } from '../index.js';
 
 import type { Game } from '../types.js';
 
