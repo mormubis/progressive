@@ -36,20 +36,22 @@ const score = progressive('A', games);
 
 ## API
 
-All functions accept `(playerId: string, games: Game[][], players?: Player[])`
-and return `number`. Round is determined by array position: `games[0]` = round
-1, `games[1]` = round 2, etc. The `Game` type has no `round` field. The optional
-`kind?: GameKind` field on `Game` identifies unplayed rounds (byes score their
-awarded points for the running total).
+All functions accept `(player: string, games: Game[][])` and return `number`.
+Round is determined by array position: `games[0]` = round 1, `games[1]` = round
+2, etc. The `Game` type has no `round` field. The optional `kind?: GameKind`
+field on `Game` identifies unplayed rounds (byes score their awarded points for
+the running total).
 
-### `progressive(playerId, games, players?)`
+### `progressive(player, games)`
 
 **FIDE section 7.5** — Progressive score. Accumulates the player's running score
 after each round, then sums all those running totals. Rounds are processed in
 array order (`games[0]` = round 1). A player who scores 1, 0.5, 1 across three
 rounds produces a progressive score of `1 + 1.5 + 2.5 = 5`.
 
-### `progressiveCut1(playerId, games, players?)`
+Also exported as `tiebreak` from `@echecs/progressive`.
+
+### `progressiveCut1(player, games)`
 
 **FIDE section 7.5 + modifier 14.1 Cut-1 (PS-C1)** — Progressive score excluding
 the first round. Round 1 (`games[0]`) is dropped entirely: the running total
@@ -62,6 +64,38 @@ For example, a player who scores 1, 0.5, 1 across three rounds:
 - `progressiveCut1` running totals (round 1 dropped): 0.5, 1.5 → sum = **2**
 
 Returns `0` when fewer than two rounds have been played.
+
+Import from the `/cut1` subpath:
+
+```typescript
+import { progressiveCut1, tiebreak } from '@echecs/progressive/cut1';
+```
+
+Also exported as `tiebreak` from `@echecs/progressive/cut1`.
+
+## Exports
+
+### `@echecs/progressive`
+
+| Export        | Kind     | Description                                    |
+| ------------- | -------- | ---------------------------------------------- |
+| `progressive` | function | Progressive score (FIDE 7.5)                   |
+| `tiebreak`    | function | Alias for `progressive`                        |
+| `Game`        | type     | A single chess game with result and players    |
+| `GameKind`    | type     | Unplayed-round classifier (`'half-bye'`, etc.) |
+| `Player`      | type     | Player shape (`{ id: string }`)                |
+| `Result`      | type     | Score value (`0 \| 0.5 \| 1`)                  |
+
+### `@echecs/progressive/cut1`
+
+| Export            | Kind     | Description                                    |
+| ----------------- | -------- | ---------------------------------------------- |
+| `progressiveCut1` | function | Progressive score excluding round 1 (PS-C1)    |
+| `tiebreak`        | function | Alias for `progressiveCut1`                    |
+| `Game`            | type     | A single chess game with result and players    |
+| `GameKind`        | type     | Unplayed-round classifier (`'half-bye'`, etc.) |
+| `Player`          | type     | Player shape (`{ id: string }`)                |
+| `Result`          | type     | Score value (`0 \| 0.5 \| 1`)                  |
 
 ## Contributing
 
