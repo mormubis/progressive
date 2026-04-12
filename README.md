@@ -1,7 +1,7 @@
 # Progressive
 
 [![npm](https://img.shields.io/npm/v/@echecs/progressive)](https://www.npmjs.com/package/@echecs/progressive)
-[![Coverage](https://codecov.io/gh/mormubis/progressive/branch/main/graph/badge.svg)](https://codecov.io/gh/mormubis/progressive)
+[![Coverage](https://codecov.io/gh/echecsjs/progressive/branch/main/graph/badge.svg)](https://codecov.io/gh/echecsjs/progressive)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **Progressive** is a TypeScript library implementing the Progressive Score
@@ -100,4 +100,4 @@ Also exported as `tiebreak` from `@echecs/progressive/cut1`.
 ## Contributing
 
 Contributions are welcome. Please open an issue at
-[github.com/mormubis/progressive/issues](https://github.com/mormubis/progressive/issues).
+[github.com/echecsjs/progressive/issues](https://github.com/echecsjs/progressive/issues).

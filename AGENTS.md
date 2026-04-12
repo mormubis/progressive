@@ -9,7 +9,7 @@ implementing the Progressive Score tiebreak following FIDE Tiebreak Regulations
 See the root `AGENTS.md` for workspace-wide conventions.
 
 **Backlog:** tracked in
-[GitHub Issues](https://github.com/mormubis/progressive/issues).
+[GitHub Issues](https://github.com/echecsjs/progressive/issues).
 
 ---
 
