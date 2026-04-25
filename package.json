@@ -55,6 +55,7 @@
   ],
   "license": "MIT",
   "name": "@echecs/progressive",
+  "packageManager": "pnpm@10.33.0",
   "publishConfig": {
     "access": "public"
   },
