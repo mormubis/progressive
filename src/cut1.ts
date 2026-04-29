@@ -1,6 +1,6 @@
 import { playerResult } from './utilities.js';
 
-import type { Game } from './types.js';
+import type { Game } from '@echecs/tournament';
 
 function progressiveCut1(player: string, games: Game[][]): number {
   let cumulative = 0;
@@ -14,4 +14,4 @@ function progressiveCut1(player: string, games: Game[][]): number {
 
 export { progressiveCut1, progressiveCut1 as tiebreak };
 
-export type { Game, GameKind, Player, Result } from './types.js';
+export type { Game, GameKind, Player, Result } from '@echecs/tournament';
